@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Workout_Tracker_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="wZS-jT-Qs7">
+                            <items>
+                                <imageView alignment="left" verticalAlignment="center" image="heart" id="mNq-dD-rq7"/>
+                                <label alignment="left" verticalAlignment="center" text="?" id="frk-Fg-0vv">
+                                    <fontDescription key="font" type="system" pointSize="32"/>
+                                </label>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Start Workout" id="qh9-aS-Z0a">
+                            <connections>
+                                <action selector="startOrStopWorkout" destination="AgC-eL-Hgc" id="ict-wU-Vri"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="heartRateLabel" destination="frk-Fg-0vv" id="gbo-D5-mOl"/>
+                        <outlet property="workoutButton" destination="qh9-aS-Z0a" id="eBH-hK-Rtp"/>
+                        <segue destination="A1f-he-lWP" kind="relationship" relationship="nextPage" id="zeg-0H-nhk"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="4" y="202"/>
+        </scene>
+        <!--Activity Ring Controller-->
+        <scene sceneID="hxl-GP-XRd">
+            <objects>
+                <controller id="A1f-he-lWP" customClass="ActivityRingController" customModule="Workout_Tracker_WatchKit_Extension">
+                    <items>
+                        <activity alignment="left" id="tdd-Ky-fYI"/>
+                    </items>
+                    <connections>
+                        <outlet property="activityRing" destination="tdd-Ky-fYI" id="Eel-oY-L1L"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="281" y="202"/>
+        </scene>
+    </scenes>
+</document>
